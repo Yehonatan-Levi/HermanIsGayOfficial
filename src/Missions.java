@@ -80,4 +80,20 @@ public class Missions {
             System.out.println(n3);
         }
     }
+
+    public static void ex5(){
+        System.out.println("Enter 5 numbers in different lines:");
+        int n1 = input.nextInt();
+        int n2 = input.nextInt();
+        int n3 = input.nextInt();
+        int n4 = input.nextInt();
+        int n5 = input.nextInt();
+
+        System.out.println("The biggest number is: " + Math.max(Math.max(n1, Math.max(n2, n3)), Math.max(n4, n5)));
+
+        System.out.println("Enter the smaller sides of a right angle triangle in different lines:");
+        double side1 = input.nextDouble();
+        double side2 = input.nextDouble();
+        System.out.print("The third side is:" + Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2)));
+    }
 }

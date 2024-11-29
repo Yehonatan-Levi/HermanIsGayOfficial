@@ -7,5 +7,7 @@ public class Tester {
         Missions.ex3(23, 12, 90);
         System.out.println("\n------------------------------\n");
         Missions.ex4();
+        System.out.println("\n------------------------------\n");
+        Missions.ex5();
     }
 }
