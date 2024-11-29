@@ -6,6 +6,6 @@ public class Tester {
         System.out.println("\n------------------------------\n");
         Missions.ex3(23, 12, 90);
         System.out.println("\n------------------------------\n");
-
+        Missions.ex4();
     }
 }
