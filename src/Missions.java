@@ -1,4 +1,6 @@
+import java.util.*;
 public class Missions {
+    Scanner input = new Scanner(System.in);
     public static void ex1(double n1, double n2, double n3){
         System.out.println((n1 + n2 + n3) / 3);
     }
@@ -15,4 +17,15 @@ public class Missions {
             System.out.println("The average is smaller then the second number");
         }
     }
+
+    public static void ex3(int n1, int n2, int n3){
+        if (n1 > n2 && n1 > n3){
+            System.out.println(n1);
+        } else if (n2 > n3) {
+            System.out.println(n2);
+        } else {
+            System.out.println(n3);
+        }
+    }
+
 }
