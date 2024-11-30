@@ -2,7 +2,8 @@ import java.util.*;
 public class Missions {
     public static Scanner input = new Scanner(System.in);
     public static void ex1(double n1, double n2, double n3){
-        System.out.println((n1 + n2 + n3) / 3);
+        double avg = (n1 + n2 + n3) / 3;
+        System.out.println(avg);
     }
 
     public static void ex2(double n1, double n2){
@@ -88,12 +89,13 @@ public class Missions {
         int n3 = input.nextInt();
         int n4 = input.nextInt();
         int n5 = input.nextInt();
-
-        System.out.println("The biggest number is: " + Math.max(Math.max(n1, Math.max(n2, n3)), Math.max(n4, n5)));
+        int max = Math.max(Math.max(n1, Math.max(n2, n3)), Math.max(n4, n5));
+        System.out.println("The biggest number is: " + max);
 
         System.out.println("Enter the smaller sides of a right angle triangle in different lines:");
         double side1 = input.nextDouble();
         double side2 = input.nextDouble();
-        System.out.print("The third side is:" + Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2)));
+        double side3 = Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
+        System.out.print("The third side is:" + side3);
     }
 }
