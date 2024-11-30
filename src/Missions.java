@@ -1,22 +1,18 @@
+import java.util.Scanner;
+
 public class Missions {
-    public static void ex1() {
-        String[] array = new String[5];
-        array[0] = "Herman";
-        array[1] = "is";
-        array[2] = "super";
-        array[3] = "mega";
-        array[4] = "gay";
+    public static Scanner input = new Scanner(System.in);
 
-        String output = "";
-        for (String s : array) {
-            output += s;
-        }
-        System.out.println(output);
+    public static void ex() {
+        System.out.println("Enter a number:");
+        int number = input.nextInt(), max = Integer.MIN_VALUE;
 
-        output = "";
-        for (int i = 4; i >= 0; i--) {
-            output += array[i];
+        while (number != 0) {
+            max = Math.max(max, number);
+            System.out.println("Enter a number:");
+            number = input.nextInt();
         }
-        System.out.println(output);
+
+        System.out.println(max);
     }
 }
