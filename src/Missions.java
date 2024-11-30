@@ -6,12 +6,15 @@ public class Missions {
         System.out.println(avg);
     }
 
-    public static void ex2(double n1, double n2){
+    public static void ex2A(double n1, double n2) {
         if (n1 % 2 == 0 && n2 % 2 == 0) {
             System.out.println("Both numbers are even");
         } else {
             System.out.println("Womp Womp not both of the numbers are even");
         }
+    }
+
+    public static void ex2B(double n1, double n2){
         if ((n1 + n2) / 2 > n1){
             System.out.println("No way!!! the average is bigger then Herman's bana-sorry i meant the first number");
         } else {
