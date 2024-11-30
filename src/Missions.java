@@ -1,104 +1,113 @@
 import java.util.*;
+
 public class Missions {
     public static Scanner input = new Scanner(System.in);
-    public static void ex1(double n1, double n2, double n3){
-        double avg = (n1 + n2 + n3) / 3;
-        System.out.println(avg);
+
+    public static double average(double... numbers) {
+        double sum = 0;
+        for (double number : numbers) {
+            sum += number;
+        }
+        return sum / numbers.length;
     }
 
-    public static void ex2A(double n1, double n2) {
-        if (n1 % 2 == 0 && n2 % 2 == 0) {
+    public static void ex1(double number1, double number2, double number3) {
+        System.out.println(average(number1, number2, number3));
+    }
+
+    public static boolean isEven(double number) {
+        return number % 2 == 0;
+    }
+
+    public static void ex2A(double number1, double number2) {
+        if (isEven(number1) && isEven(number2)) {
             System.out.println("Both numbers are even");
         } else {
             System.out.println("Womp Womp not both of the numbers are even");
         }
     }
 
-    public static void ex2B(double n1, double n2){
-        if ((n1 + n2) / 2 > n1){
+    public static void ex2B(double number1, double number2) {
+        if (average(number1, number2) > number1) {
             System.out.println("No way!!! the average is bigger then Herman's bana-sorry i meant the first number");
         } else {
             System.out.println("The average is smaller then the second number");
         }
     }
 
-    public static void ex3(int n1, int n2, int n3){
-        if (n1 > n2 && n1 > n3){
-            System.out.println(n1);
-        } else if (n2 > n3) {
-            System.out.println(n2);
-        } else {
-            System.out.println(n3);
+    public static int max(int... numbers){
+        int max = Integer.MIN_VALUE;
+        for (int number: numbers){
+            max = Math.max(max, number);
         }
+        return max;
     }
 
-    public static void ex4(){
-        System.out.println("Enter the amount of money bank 1 has: ");
-        int b1 = input.nextInt();
-        System.out.println("Enter the amount of money bank 2 has: ");
-        int b2 = input.nextInt();
-        System.out.println("Enter the amount of money bank 3 has: ");
-        int b3 = input.nextInt();
-        if (b1 > b2 && b1 > b3){
-            System.out.println(b1);
-        } else if (b2 > b3) {
-            System.out.println(b2);
-        } else {
-            System.out.println(b3);
+    public static int min(int... numbers){
+        int min = Integer.MAX_VALUE;
+        for (int number: numbers){
+            min = Math.min(min, number);
         }
+        return min;
+    }
+
+    public static void ex3(int number1, int number2, int number3) {
+        System.out.println(max(number1, number2, number3));
+    }
+
+    public static void ex4() {
+        System.out.println("Enter the amount of money bank 1 has: ");
+        int bank1 = input.nextInt();
+        System.out.println("Enter the amount of money bank 2 has: ");
+        int bank2 = input.nextInt();
+        System.out.println("Enter the amount of money bank 3 has: ");
+        int bank3 = input.nextInt();
+        System.out.println(max(bank1, bank2, bank3));
 
         System.out.println("Enter three number in three different lines");
-        String n1 = input.next();
-        String n2 = input.next();
-        String n3 = input.next();
+        String number1 = input.next();
+        String number2 = input.next();
+        String number3 = input.next();
 
-        int l1 = n1.length();
-        int l2 = n2.length();
-        int l3 = n3.length();
+        int l1 = number1.length();
+        int l2 = number2.length();
+        int l3 = number3.length();
 
-        if (l1 % 2 == 0){
-            System.out.println("the length of the number " + n1 + " is even");
+        if (isEven(l1)) {
+            System.out.println("the length of the number " + number1 + " is even");
         }
-        if (l2 % 2 == 0){
-            System.out.println("the length of the number " + n2 + " is even");
+        if (isEven(l2)) {
+            System.out.println("the length of the number " + number2 + " is even");
         }
-        if (l3 % 2 == 0){
-            System.out.println("the length of the number " + n3 + " is even");
+        if (isEven(l3)) {
+            System.out.println("the length of the number " + number3 + " is even");
         }
 
         System.out.print("the number with the most amount of digits is: ");
-        if (l1 > l2 && l1 > l3){
-            System.out.println(n1);
-        } else if (l2 > l3) {
-            System.out.println(n2);
-        } else {
-            System.out.println(n3);
-        }
+        System.out.println(max(l1, l2, l3));
 
         System.out.print("the number with the least amount of digits is: ");
-        if (l1 < l2 && l1 < l3){
-            System.out.println(n1);
-        } else if (l2 < l3) {
-            System.out.println(n2);
-        } else {
-            System.out.println(n3);
-        }
+        System.out.println(min(l1, l2, l3));
     }
 
-    public static void ex5(){
+    public static double pithagorasSentence(double side1, double side2){
+        return Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
+    }
+
+    public static void ex5() {
         System.out.println("Enter 5 numbers in different lines:");
-        int n1 = input.nextInt();
-        int n2 = input.nextInt();
-        int n3 = input.nextInt();
-        int n4 = input.nextInt();
-        int n5 = input.nextInt();
-        int max = Math.max(Math.max(n1, Math.max(n2, n3)), Math.max(n4, n5));
-        System.out.println("The biggest number is: " + max);
+        int number1 = input.nextInt();
+        int number2 = input.nextInt();
+        int number3 = input.nextInt();
+        int number4 = input.nextInt();
+        int number5 = input.nextInt();
+
+        System.out.println("The biggest number is: " + max(number1, number2, number3, number4, number5));
 
         System.out.println("Enter the smaller sides of a right angle triangle in different lines:");
         double side1 = input.nextDouble();
         double side2 = input.nextDouble();
-        double side3 = Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
+        double side3 = pithagorasSentence(side1, side2);
         System.out.print("The third side is:" + side3);
     }
 }
