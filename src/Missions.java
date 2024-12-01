@@ -11,7 +11,7 @@ public class Missions {
         return sum / numbers.length;
     }
 
-    public static void ex1(double number1, double number2, double number3) {
+    public static void printAvarage(double number1, double number2, double number3) {
         System.out.println(average(number1, number2, number3));
     }
 
@@ -19,7 +19,7 @@ public class Missions {
         return number % 2 == 0;
     }
 
-    public static void ex2A(double number1, double number2) {
+    public static void isBothEven(double number1, double number2) {
         if (isEven(number1) && isEven(number2)) {
             System.out.println("Both numbers are even");
         } else {
@@ -27,7 +27,7 @@ public class Missions {
         }
     }
 
-    public static void ex2B(double number1, double number2) {
+    public static void isBiggerThenAverage(double number1, double number2) {
         if (average(number1, number2) > number1) {
             System.out.println("No way!!! the average is bigger then Herman's bana-sorry i meant the first number");
         } else {
@@ -51,43 +51,54 @@ public class Missions {
         return min;
     }
 
-    public static void ex3(int number1, int number2, int number3) {
+    public static void printMax(int number1, int number2, int number3) {
         System.out.println(max(number1, number2, number3));
     }
 
-    public static void ex4() {
-        System.out.println("Enter the amount of money bank 1 has: ");
-        int bank1 = input.nextInt();
-        System.out.println("Enter the amount of money bank 2 has: ");
-        int bank2 = input.nextInt();
-        System.out.println("Enter the amount of money bank 3 has: ");
-        int bank3 = input.nextInt();
-        System.out.println(max(bank1, bank2, bank3));
+    public static int bankMoneyAmount(){
+        System.out.println("Enter the amount of money the bank has:");
+        return input.nextInt();
+    }
 
-        System.out.println("Enter three number in three different lines");
-        String number1 = input.next();
-        String number2 = input.next();
-        String number3 = input.next();
+    public static void maxBankHandle() {
+        int bank1 = bankMoneyAmount();
+        int bank2 = bankMoneyAmount();
+        int bank3 = bankMoneyAmount();
+        printMax(bank1, bank2, bank3);
+    }
 
-        int l1 = number1.length();
-        int l2 = number2.length();
-        int l3 = number3.length();
+    public static String inputNumber(){
+        System.out.println("Enter a number:");
+        return input.next();
+    }
 
-        if (isEven(l1)) {
-            System.out.println("the length of the number " + number1 + " is even");
-        }
-        if (isEven(l2)) {
-            System.out.println("the length of the number " + number2 + " is even");
-        }
-        if (isEven(l3)) {
-            System.out.println("the length of the number " + number3 + " is even");
-        }
+    public static void printIfEven(String number){
+        System.out.print( isEven(number.length()) ? "the length of the number " + number + " is even\n" : "");
+    }
 
-        System.out.print("the number with the most amount of digits is: ");
-        System.out.println(max(l1, l2, l3));
+    public static int indexOfMax(int... numbers){
+        //wait
+    }
 
-        System.out.print("the number with the least amount of digits is: ");
-        System.out.println(min(l1, l2, l3));
+    public static void printMaxLength(int... numbers){
+        System.out.println("the number with the most amount of digits is: \n" + numbers[max(numbers)]);
+    }
+
+    public static void printMinLength(int... numbers){
+        System.out.println("the number with the least amount of digits is: \n" + numbers[min(numbers)]);
+    }
+
+    public static void handleNumbers(){
+        String number1 = inputNumber();
+        String number2 = inputNumber();
+        String number3 = inputNumber();
+
+        printIfEven(number1);
+        printIfEven(number2);
+        printIfEven(number3);
+
+        printMaxLength(number1.length(), number2.length(), number3.length());
+        printMinLength(number1.length(), number2.length(), number3.length());
     }
 
     public static double pithagorasSentence(double side1, double side2){
