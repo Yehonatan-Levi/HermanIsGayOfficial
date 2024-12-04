@@ -19,7 +19,7 @@ public class Missions {
         return number % 2 == 0;
     }
 
-    public static void isBothEven(double number1, double number2) {
+    public static void printIsBothEven(double number1, double number2) {
         if (isEven(number1) && isEven(number2)) {
             System.out.println("Both numbers are even");
         } else {
@@ -27,7 +27,7 @@ public class Missions {
         }
     }
 
-    public static void isBiggerThenAverage(double number1, double number2) {
+    public static void exA2IsBiggerThenAverage(double number1, double number2) {
         if (average(number1, number2) > number1) {
             System.out.println("No way!!! the average is bigger then Herman's bana-sorry i meant the first number");
         } else {
@@ -37,15 +37,15 @@ public class Missions {
 
     public static int max(int... numbers) {
         int max = Integer.MIN_VALUE;
-        for (int number: numbers) {
+        for (int number : numbers) {
             max = Math.max(max, number);
         }
         return max;
     }
 
-    public static int min(int... numbers){
+    public static int min(int... numbers) {
         int min = Integer.MAX_VALUE;
-        for (int number: numbers) {
+        for (int number : numbers) {
             min = Math.min(min, number);
         }
         return min;
@@ -67,28 +67,37 @@ public class Missions {
         printMax(bank1, bank2, bank3);
     }
 
-    public static String inputNumber(){
-        System.out.println("Enter a number:");
-        return input.next();
+    public static int inputInt(String request) {
+        System.out.println(request);
+        return input.nextInt();
     }
 
-    public static void printIfEven(String number){
-        System.out.print( isEven(number.length()) ? "the length of the number " + number + " is even\n" : "");
+    public static int numberLength(int number) {
+        int counter = 1;
+        while (number > 10){
+            number /= 10;
+            counter++;
+        }
+        return counter;
+    }
+
+    public static void printIfEven(int number) {
+        System.out.print(isEven(numberLength()) ? "the length of the number " + number + " is even\n" : "");
     }
 
 
-    public static void printMaxLength(int... numbers){
+    public static void printMaxLength(int... numbers) {
         System.out.println("the number with the most amount of digits is: \n" + max(numbers));
     }
 
-    public static void printMinLength(int... numbers){
+    public static void printMinLength(int... numbers) {
         System.out.println("the number with the least amount of digits is: \n" + min(numbers));
     }
 
-    public static void handleNumbers(){
-        String number1 = inputNumber();
-        String number2 = inputNumber();
-        String number3 = inputNumber();
+    public static void exHandleNumbers() {
+        int number1 = inputInt();
+        int number2 = inputInt();
+        int number3 = inputInt();
 
         printIfEven(number1);
         printIfEven(number2);
@@ -98,11 +107,11 @@ public class Missions {
         printMinLength(number1.length(), number2.length(), number3.length());
     }
 
-    public static double distance(double side1, double side2){
+    public static double distance(double side1, double side2) {
         return Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
     }
 
-    public static int inputNumberInt(){
+    public static int inputNumberInt() {
         System.out.println("Entre a number:");
         return input.nextInt();
     }
@@ -117,7 +126,7 @@ public class Missions {
         System.out.println("The biggest number is: " + max(number1, number2, number3, number4, number5));
     }
 
-    public static void printYetter(){
+    public static void printYetter() {
         double side1 = inputNumberInt();
         double side2 = inputNumberInt();
         System.out.print("The third side is:" + distance(side1, side2));
