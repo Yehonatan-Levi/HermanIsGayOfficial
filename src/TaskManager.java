@@ -5,5 +5,8 @@ public class TaskManager {
 
     public TaskManager(LinkedList<Task> tasks){
         tasks = new LinkedList<Task>();
+        for (Task task: tasks){
+
+        }
     }
 }
