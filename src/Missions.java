@@ -1,18 +1,25 @@
 import java.util.Scanner;
 
 public class Missions {
-    public static Scanner input = new Scanner(System.in);
+    public static Scanner scanner = new Scanner(System.in);
 
-    public static void ex() {
+    public static int inputNumber(){
         System.out.println("Enter a number:");
-        int number = input.nextInt(), max = Integer.MIN_VALUE;
+        return scanner.nextInt();
+    }
+
+    public static int maxNumber(){
+        int number = inputNumber();
+        int max = Integer.MIN_VALUE;
 
         while (number != 0) {
             max = Math.max(max, number);
-            System.out.println("Enter a number:");
-            number = input.nextInt();
+            number = inputNumber();
         }
+        return max;
+    }
 
-        System.out.println(max);
+    public static void printMaxNumber() {
+        System.out.println(maxNumber());
     }
 }
