@@ -51,8 +51,8 @@ public class Missions {
         return min;
     }
 
-    public static void printMax(int number1, int number2, int number3) {
-        System.out.println(max(number1, number2, number3));
+    public static void printMax(int... numbers) {
+        System.out.println(max(numbers));
     }
 
 
@@ -69,7 +69,7 @@ public class Missions {
         return input.nextInt();
     }
 
-    public static int numberLength(int number) {
+    public static int getNumberLength(int number) {
         int counter = 1;
         while (number > 10) {
             number /= 10;
@@ -79,16 +79,11 @@ public class Missions {
     }
 
     public static void printIfEven(int number) {
-        System.out.print(isEven(numberLength(number)) ? "the length of the number " + number + " is even\n" : "");
+        System.out.print(isEven(getNumberLength(number)) ? "the length of the number " + number + " is even\n" : "");
     }
 
-
-    public static void printMaxLength(int... numbers) {
-        System.out.println("the number with the most amount of digits is: \n" + max(numbers));
-    }
-
-    public static void printMinLength(int... numbers) {
-        System.out.println("the number with the least amount of digits is: \n" + min(numbers));
+    public static void printMin(int... numbers) {
+        System.out.println(min(numbers));
     }
 
     public static void exHandleNumbers() {
@@ -101,32 +96,34 @@ public class Missions {
         printIfEven(number2);
         printIfEven(number3);
 
-        printMaxLength(numberLength(number1), numberLength(number2), numberLength(number3));
-        printMinLength(numberLength(number1), numberLength(number2), numberLength(number3));
+        printMax(getNumberLength(number1), getNumberLength(number2), getNumberLength(number3));
+        printMin(getNumberLength(number1), getNumberLength(number2), getNumberLength(number3));
     }
 
     public static double distance(double side1, double side2) {
         return Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
     }
 
-    public static int inputNumberInt() {
-        System.out.println("Entre a number:");
-        return input.nextInt();
+    public static void printMaxNumber() {
+        String message = "Enter a number:";
+        int number1 = inputInt(message);
+        int number2 = inputInt(message);
+        int number3 = inputInt(message);
+        int number4 = inputInt(message);
+        int number5 = inputInt(message);
+
+        printMax(max(number1, number2, number3, number4, number5));
     }
 
-    public static void printMaxNumber() {
-        int number1 = inputNumberInt();
-        int number2 = inputNumberInt();
-        int number3 = inputNumberInt();
-        int number4 = inputNumberInt();
-        int number5 = inputNumberInt();
-
-        System.out.println("The biggest number is: " + max(number1, number2, number3, number4, number5));
+    public static double inputDouble(String request) {
+        System.out.println(request);
+        return input.nextDouble();
     }
 
     public static void printYetter() {
-        double side1 = inputNumberInt();
-        double side2 = inputNumberInt();
+        String message = "Enter a side of a right angle triangle:";
+        double side1 = inputDouble(message);
+        double side2 = inputDouble(message);
         System.out.print("The third side is:" + distance(side1, side2));
     }
 }
