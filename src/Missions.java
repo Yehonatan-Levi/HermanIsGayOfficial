@@ -55,15 +55,12 @@ public class Missions {
         System.out.println(max(number1, number2, number3));
     }
 
-    public static int bankMoneyAmount() {
-        System.out.println("Enter the amount of money the bank has:");
-        return input.nextInt();
-    }
 
     public static void maxBankHandle() {
-        int bank1 = bankMoneyAmount();
-        int bank2 = bankMoneyAmount();
-        int bank3 = bankMoneyAmount();
+        String message = "Enter the amount of money the bank has:";
+        int bank1 = inputInt(message);
+        int bank2 = inputInt(message);
+        int bank3 = inputInt(message);
         printMax(bank1, bank2, bank3);
     }
 
@@ -74,7 +71,7 @@ public class Missions {
 
     public static int numberLength(int number) {
         int counter = 1;
-        while (number > 10){
+        while (number > 10) {
             number /= 10;
             counter++;
         }
@@ -82,7 +79,7 @@ public class Missions {
     }
 
     public static void printIfEven(int number) {
-        System.out.print(isEven(numberLength()) ? "the length of the number " + number + " is even\n" : "");
+        System.out.print(isEven(numberLength(number)) ? "the length of the number " + number + " is even\n" : "");
     }
 
 
@@ -95,16 +92,17 @@ public class Missions {
     }
 
     public static void exHandleNumbers() {
-        int number1 = inputInt();
-        int number2 = inputInt();
-        int number3 = inputInt();
+        String message = "Enter a number:";
+        int number1 = inputInt(message);
+        int number2 = inputInt(message);
+        int number3 = inputInt(message);
 
         printIfEven(number1);
         printIfEven(number2);
         printIfEven(number3);
 
-        printMaxLength(number1.length(), number2.length(), number3.length());
-        printMinLength(number1.length(), number2.length(), number3.length());
+        printMaxLength(numberLength(number1), numberLength(number2), numberLength(number3));
+        printMinLength(numberLength(number1), numberLength(number2), numberLength(number3));
     }
 
     public static double distance(double side1, double side2) {
