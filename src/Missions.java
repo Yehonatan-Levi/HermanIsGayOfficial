@@ -3,6 +3,40 @@ import java.util.*;
 public class Missions {
     public static Scanner input = new Scanner(System.in);
 
+    public static double distance(double side1, double side2) {
+        return Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
+    }
+
+    public static int max(int... numbers) {
+        int max = Integer.MIN_VALUE;
+        for (int number : numbers) {
+            max = Math.max(max, number);
+        }
+        return max;
+    }
+
+    public static void printMax(int... numbers) {
+        System.out.println(max(numbers));
+    }
+
+    public static int min(int... numbers) {
+        int min = Integer.MAX_VALUE;
+        for (int number : numbers) {
+            min = Math.min(min, number);
+        }
+        return min;
+    }
+
+    public static int inputInt(String request) {
+        System.out.println(request);
+        return input.nextInt();
+    }
+
+    public static double inputDouble(String request) {
+        System.out.println(request);
+        return input.nextDouble();
+    }
+
     public static double average(double... numbers) {
         double sum = 0;
         for (double number : numbers) {
@@ -27,34 +61,13 @@ public class Missions {
         }
     }
 
-    public static void exA2IsBiggerThenAverage(double number1, double number2) {
+    public static void isBiggerThenAverage(double number1, double number2) {
         if (average(number1, number2) > number1) {
             System.out.println("No way!!! the average is bigger then Herman's bana-sorry i meant the first number");
         } else {
             System.out.println("The average is smaller then the second number");
         }
     }
-
-    public static int max(int... numbers) {
-        int max = Integer.MIN_VALUE;
-        for (int number : numbers) {
-            max = Math.max(max, number);
-        }
-        return max;
-    }
-
-    public static int min(int... numbers) {
-        int min = Integer.MAX_VALUE;
-        for (int number : numbers) {
-            min = Math.min(min, number);
-        }
-        return min;
-    }
-
-    public static void printMax(int... numbers) {
-        System.out.println(max(numbers));
-    }
-
 
     public static void maxBankHandle() {
         String message = "Enter the amount of money the bank has:";
@@ -64,10 +77,6 @@ public class Missions {
         printMax(bank1, bank2, bank3);
     }
 
-    public static int inputInt(String request) {
-        System.out.println(request);
-        return input.nextInt();
-    }
 
     public static int getNumberLength(int number) {
         int counter = 1;
@@ -78,7 +87,7 @@ public class Missions {
         return counter;
     }
 
-    public static void printIfEven(int number) {
+    public static void printIsEven(int number) {
         System.out.print(isEven(getNumberLength(number)) ? "the length of the number " + number + " is even\n" : "");
     }
 
@@ -92,16 +101,12 @@ public class Missions {
         int number2 = inputInt(message);
         int number3 = inputInt(message);
 
-        printIfEven(number1);
-        printIfEven(number2);
-        printIfEven(number3);
+        printIsEven(number1);
+        printIsEven(number2);
+        printIsEven(number3);
 
         printMax(getNumberLength(number1), getNumberLength(number2), getNumberLength(number3));
         printMin(getNumberLength(number1), getNumberLength(number2), getNumberLength(number3));
-    }
-
-    public static double distance(double side1, double side2) {
-        return Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
     }
 
     public static void printMaxNumber() {
@@ -112,12 +117,7 @@ public class Missions {
         int number4 = inputInt(message);
         int number5 = inputInt(message);
 
-        printMax(max(number1, number2, number3, number4, number5));
-    }
-
-    public static double inputDouble(String request) {
-        System.out.println(request);
-        return input.nextDouble();
+        printMax(number1, number2, number3, number4, number5);
     }
 
     public static void printYetter() {

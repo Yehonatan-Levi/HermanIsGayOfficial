@@ -4,7 +4,7 @@ public class Tester {
         System.out.println("\n------------------------------\n");
         Missions.printIsBothEven(18, 44);
         System.out.println("\n------------------------------\n");
-        Missions.exA2IsBiggerThenAverage(18, 44);
+        Missions.isBiggerThenAverage(18, 44);
         System.out.println("\n------------------------------\n");
         Missions.printMax(23, 12, 90);
         System.out.println("\n------------------------------\n");
