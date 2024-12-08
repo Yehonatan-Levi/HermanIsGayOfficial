@@ -16,6 +16,7 @@ public class Missions {
             max = Math.max(max, number);
             number = inputNumber();
         }
+        
         return max;
     }
 
