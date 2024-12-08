@@ -13,6 +13,10 @@ public class TaskManager {
         this.tasks.add(task);
     }
 
+    public boolean isStartWithD(String name){
+        return name.charAt(0) == 'D';
+    }
+
     public interface Checks {
         ArrayList<Task> filter(List<Task> tasks);
     }
@@ -21,7 +25,7 @@ public class TaskManager {
     {
         ArrayList<Task> filtered = new ArrayList<Task>();
         for (Task task : tasks) {
-            if (task.isComplete() || task.getName().charAt(0) == 'D'){
+            if (task.isComplete() || isStartWithD(task.getName())){
                 filtered.add(task);
             }
         }
