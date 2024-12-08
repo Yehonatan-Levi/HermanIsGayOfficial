@@ -21,7 +21,16 @@ public class Missions {
         }
     }
 
-    public static void ex(int[] array) {
+    public static void printArray(int[] array){
+        String message = "[ ";
+        for (int number: array){
+            message += number + ", ";
+        }
+        message += "]";
+        System.out.println(message);
+    }
+
+    public static void exHandle(int[] array) {
         System.out.println(isEven(minPointer(array)) ? array[minPointer(array)] : "");
         flipArray(array);
     }
