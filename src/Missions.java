@@ -87,7 +87,7 @@ public class Missions {
         return counter;
     }
 
-    public static void printIsEven(int number) {
+    public static void printIsEvenLength(int number) {
         System.out.print(isEven(getNumberLength(number)) ? "the length of the number " + number + " is even\n" : "");
     }
 
@@ -101,9 +101,9 @@ public class Missions {
         int number2 = inputInt(message);
         int number3 = inputInt(message);
 
-        printIsEven(number1);
-        printIsEven(number2);
-        printIsEven(number3);
+        printIsEvenLength(number1);
+        printIsEvenLength(number2);
+        printIsEvenLength(number3);
 
         infinitePrintMax(getNumberLength(number1), getNumberLength(number2), getNumberLength(number3));
         printMin(getNumberLength(number1), getNumberLength(number2), getNumberLength(number3));
