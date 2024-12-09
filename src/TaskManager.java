@@ -3,17 +3,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class TaskManager {
-    ArrayList<Task> tasks = new ArrayList<Task>();
+    private final ArrayList<Task> tasks = new ArrayList<Task>();
 
     public TaskManager() {
 
     }
 
-    public void add(Task task){
+    public void add(Task task) {
         this.tasks.add(task);
     }
 
-    public boolean isStartWithD(String name){
+    public boolean isStartWithD(String name) {
         return name.charAt(0) == 'D';
     }
 
@@ -25,14 +25,14 @@ public class TaskManager {
     {
         ArrayList<Task> filtered = new ArrayList<Task>();
         for (Task task : tasks) {
-            if (task.isComplete() || isStartWithD(task.getName())){
+            if (task.isComplete() || isStartWithD(task.getName())) {
                 filtered.add(task);
             }
         }
         return filtered;
     };
 
-    public ArrayList<Task> filter(Checks filterer){
+    public ArrayList<Task> filter(Checks filterer) {
         return filterer.filter(this.tasks);
     }
 }
