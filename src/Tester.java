@@ -6,14 +6,15 @@ public class Tester {
         System.out.println("\n------------------------------\n");
         Missions.isBiggerThenAverage(18, 44);
         System.out.println("\n------------------------------\n");
-        Missions.printMax(23, 12, 90);
+        Missions.infinitePrintMax(23, 12, 90);
         System.out.println("\n------------------------------\n");
         Missions.maxBankHandle();
         System.out.println("\n------------------------------\n");
          Missions.exHandleNumbers();
         System.out.println("\n------------------------------\n");
-        Missions.printMaxNumber();
+        Missions.infinitePrintMax();
         System.out.println("\n------------------------------\n");
         Missions.printYetter();
+        Missions.printMaxNumber();
     }
 }

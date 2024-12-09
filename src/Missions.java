@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Missions {
-    public static Scanner input = new Scanner(System.in);
+    public static Scanner scanner = new Scanner(System.in);
 
     public static double distance(double side1, double side2) {
         return Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
@@ -15,7 +15,7 @@ public class Missions {
         return max;
     }
 
-    public static void printMax(int... numbers) {
+    public static void infinitePrintMax(int... numbers) {
         System.out.println(max(numbers));
     }
 
@@ -29,12 +29,12 @@ public class Missions {
 
     public static int inputInt(String request) {
         System.out.println(request);
-        return input.nextInt();
+        return scanner.nextInt();
     }
 
     public static double inputDouble(String request) {
         System.out.println(request);
-        return input.nextDouble();
+        return scanner.nextDouble();
     }
 
     public static double average(double... numbers) {
@@ -74,7 +74,7 @@ public class Missions {
         int bank1 = inputInt(message);
         int bank2 = inputInt(message);
         int bank3 = inputInt(message);
-        printMax(bank1, bank2, bank3);
+        infinitePrintMax(bank1, bank2, bank3);
     }
 
 
@@ -105,7 +105,7 @@ public class Missions {
         printIsEven(number2);
         printIsEven(number3);
 
-        printMax(getNumberLength(number1), getNumberLength(number2), getNumberLength(number3));
+        infinitePrintMax(getNumberLength(number1), getNumberLength(number2), getNumberLength(number3));
         printMin(getNumberLength(number1), getNumberLength(number2), getNumberLength(number3));
     }
 
@@ -117,7 +117,7 @@ public class Missions {
         int number4 = inputInt(message);
         int number5 = inputInt(message);
 
-        printMax(number1, number2, number3, number4, number5);
+        infinitePrintMax(number1, number2, number3, number4, number5);
     }
 
     public static void printYetter() {
@@ -125,5 +125,26 @@ public class Missions {
         double side1 = inputDouble(message);
         double side2 = inputDouble(message);
         System.out.print("The third side is:" + distance(side1, side2));
+    }
+
+    public static int inputNumber(){
+        System.out.println("Enter a number:");
+        return scanner.nextInt();
+    }
+
+    public static int infiniteMaxNumber(){
+        int number = inputNumber();
+        int max = Integer.MIN_VALUE;
+
+        while (number != 0) {
+            max = Math.max(max, number);
+            number = inputNumber();
+        }
+        
+        return max;
+    }
+
+    public static void infinitePrintMaxNumber() {
+        System.out.println(infiniteMaxNumber());
     }
 }
