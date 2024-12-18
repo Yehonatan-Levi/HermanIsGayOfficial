@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class Missions {
     public static boolean isEven(int number) {
         return number % 2 == 0;
     }
 
-    public static int minPointer(int[] array) {
+    public static int getMinIndex(int[] array) {
         int minPointer = 0;
         for (int i = 1; i < array.length; i++) {
             if (array[i] < array[minPointer]) {
@@ -13,25 +15,23 @@ public class Missions {
         return minPointer;
     }
 
-    public static void flipArray(int[] array) {
-        for (int i = 0; i < array.length / 2; i++) {
-            array[array.length - 1 - i] += array[i];
-            array[i] = array[array.length - 1 - i] - array[i];
-            array[array.length - 1 - i] -= array[i];
-        }
+    public static void switchArrayValues(int[] array, int firstIndex, int secondIndex) {
+        // exemple: array[firstIndex] = 9 and array[secondIndex] = 7
+        array[firstIndex] += array[secondIndex]; // array[firstIndex] = 9 + 7 = 16
+        array[secondIndex] = array[firstIndex] - array[secondIndex]; // array[secondIndex] = 16 - 7 = 9
+        array[firstIndex] -= array[secondIndex]; // array[firstIndex] = 16 - 9 = 7
     }
 
-    public static void printArray(int[] array){
-        String message = "[ ";
-        for (int number: array){
-            message += number + ", ";
+    public static void flipArray(int[] array) {
+        for (int startIndex = 0, endIndex = array.length - 1; startIndex < array.length / 2; startIndex++, endIndex--) {
+            switchArrayValues(array, startIndex, endIndex);
         }
-        message += "]";
-        System.out.println(message);
     }
 
     public static void exHandle(int[] array) {
-        System.out.println(isEven(minPointer(array)) ? array[minPointer(array)] : "");
+        if (isEven(getMinIndex(array))) {
+            System.out.println(array[getMinIndex(array)]);
+        }
         flipArray(array);
     }
 }
