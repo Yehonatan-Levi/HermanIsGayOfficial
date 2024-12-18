@@ -27,6 +27,11 @@ public class Util {
         return scanner.nextInt();
     }
 
+    public static double inputDouble(String request) {
+        System.out.println(request);
+        return scanner.nextDouble();
+    }
+
     public static int getNumberLength(int number) {
         int counter = 1;
         while (number > 10) {
@@ -34,11 +39,6 @@ public class Util {
             counter++;
         }
         return counter;
-    }
-
-    public static double inputDouble(String request) {
-        System.out.println(request);
-        return scanner.nextDouble();
     }
 
     public static double average(double... numbers) {
