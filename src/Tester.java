@@ -9,6 +9,10 @@ public class Tester {
     }
 
     public static void main(String[] args) {
+        Missions.printMaxNumber();
+
+        System.out.println("\n-----------------------------\n");
+
         int[] array = {1, 2, 3, 4, 5};
         Missions.exHandle(array);
         printArray(array);
