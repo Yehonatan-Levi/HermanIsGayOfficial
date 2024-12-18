@@ -1,5 +1,4 @@
 public class Tester {
-
     public static void main(String[] args){
         String name = "HermAN";
         Missions.exStringManipulation(name);
@@ -15,5 +14,8 @@ public class Tester {
         taskManager.add(elseElseTask);
         System.out.println(taskManager.filter(taskManager.getFilteredTasks));
 
+        System.out.println("\n-------------------------------------------\n");
+
+        Missions.printMaxNumber();
     }
 }
