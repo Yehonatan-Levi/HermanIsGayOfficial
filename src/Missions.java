@@ -1,8 +1,5 @@
-import java.util.Scanner;
 
 public class Missions {
-    public static Scanner scanner = new Scanner(System.in);
-
     public static void infinitePrintMax(int... numbers) {
         System.out.println(Util.max(numbers));
     }
@@ -35,23 +32,25 @@ public class Missions {
         infinitePrintMax(bank1, bank2, bank3);
     }
 
-    public static void printIsEvenLength(int number) {
-        System.out.print(Util.isEven(Util.getNumberLength(number)) ? "the length of the number " + number + " is even\n" : "");
+    public static void exerciseIsEvenLength(int number) {
+        if (Util.isEven((Util.getNumberLength(number)))) {
+            System.out.println("the length of the number " + number + " is even");
+        }
     }
 
     public static void printMin(int... numbers) {
         System.out.println(Util.min(numbers));
     }
 
-    public static void exHandleNumbers() {
+    public static void exerciseHandleNumbers() {
         String message = "Enter a number:";
         int number1 = Util.inputInt(message);
         int number2 = Util.inputInt(message);
         int number3 = Util.inputInt(message);
 
-        printIsEvenLength(number1);
-        printIsEvenLength(number2);
-        printIsEvenLength(number3);
+        exerciseIsEvenLength(number1);
+        exerciseIsEvenLength(number2);
+        exerciseIsEvenLength(number3);
 
         infinitePrintMax(Util.getNumberLength(number1), Util.getNumberLength(number2), Util.getNumberLength(number3));
         printMin(Util.getNumberLength(number1), Util.getNumberLength(number2), Util.getNumberLength(number3));
@@ -75,20 +74,20 @@ public class Missions {
         System.out.print("The third side is:" + Util.distance(side1, side2));
     }
 
-    public static int infiniteMaxNumber() {
-        String message = "Enter a number:";
-        int number = Util.inputInt(message);
+    public static int maxUntilGetZero() {
+        String enterNumberMessage = "Enter a number:";
+        int number = Util.inputInt(enterNumberMessage);
         int max = Integer.MIN_VALUE;
 
         while (number != 0) {
-            max = Math.max(max, number);
-            number = Util.inputInt(message);
+            max = Util.max(max, number);
+            number = Util.inputInt(enterNumberMessage);
         }
 
         return max;
     }
 
-    public static void infinitePrintMaxNumber() {
-        System.out.println(infiniteMaxNumber());
+    public static void printMaxUntilGetZero() {
+        System.out.println(maxUntilGetZero());
     }
 }

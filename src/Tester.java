@@ -10,12 +10,12 @@ public class Tester {
         System.out.println("\n------------------------------\n");
         Missions.maxBankHandle();
         System.out.println("\n------------------------------\n");
-         Missions.exHandleNumbers();
+         Missions.exerciseHandleNumbers();
         System.out.println("\n------------------------------\n");
         Missions.printMaxNumber();
         System.out.println("\n------------------------------\n");
         Missions.printYetter();
         System.out.println("\n------------------------------\n");
-        Missions.infinitePrintMaxNumber();
+        Missions.printMaxUntilGetZero();
     }
 }

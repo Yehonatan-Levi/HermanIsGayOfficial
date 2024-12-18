@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Util {
-    public static Scanner scanner = new Scanner(System.in);
+    final public static Scanner scanner = new Scanner(System.in);
 
     public static double distance(double side1, double side2) {
         return Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
