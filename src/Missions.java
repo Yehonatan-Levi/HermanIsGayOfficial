@@ -23,4 +23,25 @@ public class Missions {
     public static void printMaxNumber() {
         System.out.println(maxNumber());
     }
+
+    // exceptions section
+
+    public static void checkIllegalArgumentException(int number, int illegalArgument) throws IllegalAccessException {
+        if (number == illegalArgument){
+            throw new IllegalAccessException("noughty noghty");
+        }
+    }
+
+    public static void exerciseExceptions() throws RuntimeException, IllegalAccessException {
+        int inputNumber = inputNumber();
+        while (inputNumber != 100){
+            try{
+                checkIllegalArgumentException(inputNumber, 45);
+            } catch (IllegalAccessException exception) {
+                System.out.println("that was a close one, IllegalAccessException was caought");
+            }
+            inputNumber = inputNumber();
+        }
+        throw new RuntimeException("WHAT ARE YOU DOING!!! ITS 100!!!!");
+    }
 }
