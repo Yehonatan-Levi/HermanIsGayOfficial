@@ -1,14 +1,39 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Missions {
-    public static Scanner scanner = new Scanner(System.in);
+    final public static Scanner scanner = new Scanner(System.in);
 
-    public static int inputNumber(){
+    public interface StringManipulation {
+        String manipulate(String text);
+    }
+
+    public interface CheckString {
+        char[] check(String text1, String text2);
+    }
+
+    public static final StringManipulation toUpperCase = text -> text.toUpperCase();
+    public static final StringManipulation toLowerCase = text -> text.toLowerCase();
+
+    public static void exStringManipulation(String text) {
+        System.out.println(text);
+        System.out.println(toLowerCase.manipulate(text));
+        System.out.println(toUpperCase.manipulate(text));
+    }
+
+
+    public static final CheckString whoSmaller = (text1, text2) -> (text1.length() < text2.length()) ? text1.toCharArray() : text2.toCharArray();
+
+    public static void exCheckString(String text1, String text2) {
+        System.out.println(whoSmaller.check(text1, text2));
+    }
+
+    public static int inputNumber() {
         System.out.println("Enter a number:");
         return scanner.nextInt();
     }
 
-    public static int maxNumber(){
+    public static int maxNumber() {
         int number = inputNumber();
         int max = Integer.MIN_VALUE;
 
@@ -16,7 +41,7 @@ public class Missions {
             max = Math.max(max, number);
             number = inputNumber();
         }
-        
+
         return max;
     }
 
