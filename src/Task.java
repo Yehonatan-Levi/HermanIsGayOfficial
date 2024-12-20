@@ -1,23 +1,18 @@
 public class Task {
     private final String name;
-    private boolean complete;
+    private boolean isComplete;
 
-    public Task(String name, boolean complete) {
+    public Task(String name, boolean isComplete) {
         this.name = name;
-        this.complete = complete;
+        this.isComplete = isComplete;
     }
 
-    public Task(Task object){
-        this.name = object.name;
-        this.complete = object.complete;
+    public boolean getIsComplete() {
+        return this.isComplete;
     }
 
-    public boolean isComplete() {
-        return this.complete;
-    }
-
-    public void setComplete(boolean complete) {
-        this.complete = complete;
+    public void setIsComplete(boolean isComplete) {
+        this.isComplete = isComplete;
     }
 
     public String getName() {
@@ -27,7 +22,7 @@ public class Task {
     public String toString() {
         return "Task{" +
                 "name='" + name + '\'' +
-                ", complete=" + complete +
+                ", complete=" + isComplete +
                 '}';
     }
 }
