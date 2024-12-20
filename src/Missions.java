@@ -38,15 +38,14 @@ public class Missions {
     }
 
     public static void switchArrayValues(int[] array, int firstIndex, int secondIndex) {
-        // example: array[firstIndex] = 9 and array[secondIndex] = 7
-        array[firstIndex] += array[secondIndex]; // array[firstIndex] = 9 + 7 = 16
-        array[secondIndex] = array[firstIndex] - array[secondIndex]; // array[secondIndex] = 16 - 7 = 9
-        array[firstIndex] -= array[secondIndex]; // array[firstIndex] = 16 - 9 = 7
+        array[firstIndex] += array[secondIndex];
+        array[secondIndex] = array[firstIndex] - array[secondIndex];
+        array[firstIndex] -= array[secondIndex];
     }
 
     public static void flipArray(int[] array) {
-        for (int startIndex = 0, endIndex = array.length - 1; startIndex < array.length / 2; startIndex++, endIndex--) {
-            switchArrayValues(array, startIndex, endIndex);
+        for (int startIndex = 0; startIndex < array.length / 2; startIndex++) {
+            switchArrayValues(array, startIndex, array.length - startIndex - 1);
         }
     }
 
