@@ -6,7 +6,7 @@ public class Tester {
         System.out.println("\n------------------------------\n");
         Missions.isBiggerThenAverage(18, 44);
         System.out.println("\n------------------------------\n");
-        Missions.infinitePrintMax(23, 12, 90);
+        Missions.printMaxNoLimits(23, 12, 90);
         System.out.println("\n------------------------------\n");
         Missions.maxBankHandle();
         System.out.println("\n------------------------------\n");

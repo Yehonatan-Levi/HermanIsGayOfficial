@@ -1,6 +1,6 @@
 
 public class Missions {
-    public static void infinitePrintMax(int... numbers) {
+    public static void printMaxNoLimits(int... numbers) {
         System.out.println(Util.max(numbers));
     }
 
@@ -29,7 +29,7 @@ public class Missions {
         int bank1 = Util.inputInt(message);
         int bank2 = Util.inputInt(message);
         int bank3 = Util.inputInt(message);
-        infinitePrintMax(bank1, bank2, bank3);
+        printMaxNoLimits(bank1, bank2, bank3);
     }
 
     public static void exerciseIsEvenLength(int number) {
@@ -52,7 +52,7 @@ public class Missions {
         exerciseIsEvenLength(number2);
         exerciseIsEvenLength(number3);
 
-        infinitePrintMax(Util.getNumberLength(number1), Util.getNumberLength(number2), Util.getNumberLength(number3));
+        printMaxNoLimits(Util.getNumberLength(number1), Util.getNumberLength(number2), Util.getNumberLength(number3));
         printMin(Util.getNumberLength(number1), Util.getNumberLength(number2), Util.getNumberLength(number3));
     }
 
@@ -64,7 +64,7 @@ public class Missions {
         int number4 = Util.inputInt(message);
         int number5 = Util.inputInt(message);
 
-        infinitePrintMax(number1, number2, number3, number4, number5);
+        printMaxNoLimits(number1, number2, number3, number4, number5);
     }
 
     public static void printYetter() {
