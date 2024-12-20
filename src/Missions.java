@@ -26,17 +26,17 @@ public class Missions {
 
     // exceptions section
 
-    public static void checkIllegalArgumentException(int number, int illegalArgument) throws IllegalAccessException {
+    public static void throwIfIllegalInput(int number, int illegalArgument) throws IllegalAccessException {
         if (number == illegalArgument){
-            throw new IllegalAccessException("noughty noghty");
+            throw new IllegalAccessException("noughty noughty");
         }
     }
 
-    public static void exerciseExceptions() throws RuntimeException, IllegalAccessException {
+    public static void exerciseExceptions() throws RuntimeException {
         int inputNumber = inputNumber();
         while (inputNumber != 100){
             try{
-                checkIllegalArgumentException(inputNumber, 45);
+                throwIfIllegalInput(inputNumber, 45);
             } catch (IllegalAccessException exception) {
                 System.out.println("that was a close one, IllegalAccessException was caought");
             }
