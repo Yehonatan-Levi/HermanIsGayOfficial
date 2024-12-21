@@ -17,44 +17,32 @@ public class TaskManager {
         this.tasks.add(task);
     }
 
+    interface TaskCondition {
+        boolean check(Task task);
+    }
 
-    ChecksAndUpdates getFilteredTasks = tasks ->
-    {
-        ArrayList<Task> filtered = new ArrayList<Task>();
+    private static ArrayList<Task> filterManage(List<Task> tasks, TaskCondition condition, boolean updateTask) {
+        ArrayList<Task> result = new ArrayList<>();
         for (Task task : tasks) {
-            if (task.getIsComplete() || task.getName().charAt(0) == 'D') {
-                filtered.add(task);
+            if (condition.check(task)) {
+                if (updateTask) {
+                    task.setIsComplete(false); // Common update logic
+                }
+                result.add(task);
             }
         }
-        return filtered;
-    };
+        return result;
+    }
 
-    ChecksAndUpdates setNotComplete = tasks ->
-    {
-        ArrayList<Task> updated = new ArrayList<Task>();
-        for (Task task : tasks) {
-            if (task.getIsComplete() && (task.getName().charAt(0) == task.getName().charAt(task.getName().length() - 1) || task.getName().lastIndexOf('c') != -1)) {
-                task.setIsComplete(false);
-                updated.add(task);
-            }
-        }
-        return updated;
-    };
+    static ChecksAndUpdates getFilteredTasks = tasks -> filterManage(tasks, task -> task.getIsComplete() || task.getName().charAt(0) == 'D',false);
 
-    ChecksAndUpdates removeHerman = tasks ->
-    {
-        ArrayList<Task> noHomo = new ArrayList<>();
-        for (Task task : tasks){
-            if (!task.getName().equals("herman")){
-                noHomo.add(task);
-            }
-        }
-        return noHomo;
-    };
+    static ChecksAndUpdates setNotComplete = tasks -> filterManage(tasks, task -> task.getIsComplete() && (task.getName().charAt(0) == task.getName().charAt(task.getName().length() - 1) || task.getName().lastIndexOf('c') != -1),true);
+
+    static ChecksAndUpdates removeHerman = tasks -> filterManage(tasks, task -> !task.getName().equals("herman"),false);
 
     public ArrayList<Task> manage(ChecksAndUpdates requirement) {
         return requirement.filter(this.tasks);
     }
-
-
 }
+
+
