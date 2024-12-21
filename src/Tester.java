@@ -12,9 +12,9 @@ public class Tester {
         taskManager.add(task);
         taskManager.add(elseTask);
         taskManager.add(elseElseTask);
-        System.out.println(taskManager.manage(taskManager.getFilteredTasks));
-        System.out.println(taskManager.manage(taskManager.setNotComplete));
-        System.out.println(taskManager.manage(taskManager.removeHerman));
+        System.out.println(taskManager.filter(TaskManager.isStartsWithD));
+        System.out.println(taskManager.filter(TaskManager.isIdenticalFirstAndLastDigits));
+        System.out.println(taskManager.filter(TaskManager.isEndWithC));
 
 
         System.out.println("\n-------------------------------------------\n");
