@@ -23,4 +23,7 @@ public class Missions {
     public static void printMaxNumber() {
         System.out.println(maxNumber());
     }
+
+
+
 }
