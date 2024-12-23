@@ -4,7 +4,7 @@ public class Tester {
 
         System.out.println("\n------------------------------\n");
 
-        Product shirt = new Product("shirt", 89.90, Currency.NIS, Category.CLOTHING);
-        System.out.println(shirt.getPriceAfterSaleWithRequestedCurrency(Currency.USD));
+        Product shirt = new Product("shirt", Category.CLOTHING, 89.90, Currency.NIS);
+        System.out.println(shirt.getPriceAfterSaleByCurrency(Currency.USD));
     }
 }

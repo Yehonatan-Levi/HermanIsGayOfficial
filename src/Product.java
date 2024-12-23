@@ -1,22 +1,11 @@
-public class Product {
+public record Product(String name, Category category, double price, Currency currency) {
+    private static final int PERCENTAGE_IN_A_WHOLE = 100;
 
-    private final String name;
-    private final Category category;
-    private double price;
-    private Currency currency;
-
-    public Product(String name, double price, Currency currency, Category category) {
-        this.name = name;
-        this.price = price;
-        this.currency = currency;
-        this.category = category;
-    }
-
-    public double getPriceAfterSaleWithRequestedCurrency(Currency currency) {
+    public double getPriceAfterSaleByCurrency(Currency currency) {
         if (this.currency == currency) {
-            return price * category.getSalePercentage() / 100;
+            return price * (PERCENTAGE_IN_A_WHOLE - category.getSalePercentage()) / PERCENTAGE_IN_A_WHOLE;
         }
-        return currency.exchangeToCurrency(price) * (100 -  category.getSalePercentage()) / 100;
+        return this.currency.exchangeToCurrency(price, currency) * (PERCENTAGE_IN_A_WHOLE - category.getSalePercentage()) / PERCENTAGE_IN_A_WHOLE;
     }
 
 }
