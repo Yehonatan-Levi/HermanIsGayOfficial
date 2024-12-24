@@ -1,11 +1,8 @@
 public record Product(String name, Category category, double price, Currency currency) {
-    private static final int PERCENTAGE_IN_A_WHOLE = 100;
-
-    public double getPriceAfterSaleByCurrency(Currency currency) {
-        if (this.currency == currency) {
-            return price * (PERCENTAGE_IN_A_WHOLE - category.getSalePercentage()) / PERCENTAGE_IN_A_WHOLE;
+    public double getPriceAfterSaleByCurrency(Currency wantedCurrency) {
+        if (this.currency == wantedCurrency) {
+            return category.getPriceAfterSale(price);
         }
-        return this.currency.exchangeToCurrency(price, currency) * (PERCENTAGE_IN_A_WHOLE - category.getSalePercentage()) / PERCENTAGE_IN_A_WHOLE;
+        return category.getPriceAfterSale(this.currency.exchangeToCurrency(price, wantedCurrency));
     }
-
 }
