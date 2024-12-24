@@ -6,15 +6,21 @@ public class Tester {
         Missions.exCheckString("Ooblie Booblie", "Herman is super mega shega gay");
         System.out.println("-------------------------------------------------\n");
         TaskManager taskManager = new TaskManager();
-        Task task = new Task("DOLOLOLOLOLOLD", true);
-        Task elseTask = new Task("lololololololololol", false);
-        Task elseElseTask = new Task("herman", true);
-        taskManager.add(task);
-        taskManager.add(elseTask);
-        taskManager.add(elseElseTask);
-        System.out.println(taskManager.filter(TaskManager.isStartsWithD));
-        System.out.println(taskManager.filter(TaskManager.isIdenticalFirstAndLastDigits));
-        System.out.println(taskManager.filter(TaskManager.isEndWithC));
+        Task taskDol = new Task("DOLOLOLOLOLOLD", true);
+        Task taskLol = new Task("lololololololololol", false);
+        Task taskHerm = new Task("herman", true);
+        taskManager.add(taskDol);
+        taskManager.add(taskLol);
+        taskManager.add(taskHerm);
+
+        TaskManager.TaskFilter isStartsWithD = task -> {return task.getName().charAt(0) == 'D';};
+        TaskManager.TaskFilter isIdenticalFirstAndLastDigits = task -> {return task.getName().charAt(0) == task.getName().charAt(task.getName().length()
+                - 1);};
+        TaskManager.TaskFilter isEndWithC = task -> {return task.getName().charAt(task.getName().length() - 1) == 'c';};
+
+        System.out.println(taskManager.filter(isStartsWithD));
+        System.out.println(taskManager.filter(isIdenticalFirstAndLastDigits));
+        System.out.println(taskManager.filter(isEndWithC));
 
 
         System.out.println("\n-------------------------------------------\n");
