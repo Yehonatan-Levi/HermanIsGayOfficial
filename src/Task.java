@@ -7,8 +7,8 @@ public class Task {
         this.isComplete = isComplete;
     }
 
-    public boolean getIsComplete() {
-        return this.isComplete;
+    public boolean isComplete() {
+        return isComplete;
     }
 
     public void setIsComplete(boolean isComplete) {

@@ -11,12 +11,12 @@ public class TaskManager {
     }
 
     public void add(Task task) {
-        this.tasks.add(task);
+        tasks.add(task);
     }
 
     public ArrayList<Task> filter(TaskFilter condition) {
         ArrayList<Task> filteredTasks = new ArrayList<>();
-        for (Task task : this.tasks) {
+        for (Task task : tasks) {
             if (condition.check(task)) {
                 filteredTasks.add(task);
             }
